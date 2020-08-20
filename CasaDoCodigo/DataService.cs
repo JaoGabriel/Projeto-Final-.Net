@@ -13,7 +13,7 @@ namespace CasaDoCodigo
         private readonly ApplicationContext contexto;
         private readonly IProdutoRepository produtoRepository;
 
-        public DataService(ApplicationContext contexto,
+       public DataService(ApplicationContext contexto,
             IProdutoRepository produtoRepository)
         {
             this.contexto = contexto;
@@ -36,6 +36,4 @@ namespace CasaDoCodigo
             return livros;
         }
     }
-
-
 }

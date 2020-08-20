@@ -6,6 +6,25 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20200816045024_AdicionaCategoria.cs" />
+    <Compile Remove="Migrations\20200816045024_AdicionaCategoria.Designer.cs" />
+    <Compile Remove="Migrations\20200816055451_AdicionaCategoria.cs" />
+    <Compile Remove="Migrations\20200816055451_AdicionaCategoria.Designer.cs" />
+    <Compile Remove="Migrations\20200820001544_AddCategoria.cs" />
+    <Compile Remove="Migrations\20200820001544_AddCategoria.Designer.cs" />
+    <Compile Remove="Migrations\20200820001645_AddCategoria.cs" />
+    <Compile Remove="Migrations\20200820001645_AddCategoria.Designer.cs" />
+    <Compile Remove="Migrations\20200820001816_AddCategoria.cs" />
+    <Compile Remove="Migrations\20200820001816_AddCategoria.Designer.cs" />
+    <Compile Remove="Migrations\20200820163843_AddCategoria.cs" />
+    <Compile Remove="Migrations\20200820163843_AddCategoria.Designer.cs" />
+    <Compile Remove="Migrations\20200820205017_AddCategoria.cs" />
+    <Compile Remove="Migrations\20200820205017_AddCategoria.Designer.cs" />
+    <Compile Remove="Migrations\20200820205415_AddCategoria.cs" />
+    <Compile Remove="Migrations\20200820205415_AddCategoria.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="middlewares.png" />
     <None Remove="pipeline.png" />
   </ItemGroup>
