@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Threading.Tasks;
@@ -12,6 +13,22 @@ namespace CasaDoCodigo.Models
     {
         [DataMember]
         public int Id { get; protected set; }
+    }
+
+    public class Categoria : BaseModel
+    {
+        public Categoria()
+        {
+
+        }
+
+        [Required]
+        public string Nome { get; private set; }
+
+        public Categoria(string nome)
+        {
+            this.Nome = nome;
+        }
     }
 
     public class Produto : BaseModel
@@ -27,12 +44,15 @@ namespace CasaDoCodigo.Models
         public string Nome { get; private set; }
         [Required]
         public decimal Preco { get; private set; }
+        [Required]
+        public Categoria Categoria { get; private set; }
 
-        public Produto(string codigo, string nome, decimal preco)
+        public Produto(string codigo, string nome, decimal preco,Categoria categoria)
         {
             this.Codigo = codigo;
             this.Nome = nome;
             this.Preco = preco;
+            this.Categoria = categoria;
         }
     }
 
