@@ -29,6 +29,12 @@ namespace CasaDoCodigo.Controllers
             return View(produtoRepository.GetProdutos());
         }
 
+        public IActionResult BuscaDeProdutos()
+        {
+            var response = new BuscaProdutoViewModel(produtoRepository.GetProdutos());
+            return View(response);
+        }
+
         public async Task<IActionResult> Carrinho(string codigo)
         {
             if (!string.IsNullOrEmpty(codigo))
