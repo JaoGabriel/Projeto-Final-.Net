@@ -16,14 +16,21 @@ namespace CasaDoCodigo.Repositories
         }
 
 
-        public IList<Produto> GetProdutos()
+        public async Task<IList<Produto>> GetProdutos()
         {
+            return await dbSet.Include(p => p.Categoria).ToListAsync();
+        }
 
-            var produto = dbSet
-                .Include(p => p.Categoria)
-                .ToList();
+        public async Task<IList<Produto>> GetProdutos(string pesquisa)
+        {
+            IQueryable<Produto> consulta = dbSet.Include(p => p.Categoria);
 
-            return produto;
+            if (!string.IsNullOrWhiteSpace(pesquisa))
+            {
+                consulta = consulta.Where(p => p.Nome.Contains(pesquisa) || p.Categoria.Nome.Contains(pesquisa));
+            }
+
+            return await consulta.ToListAsync();
         }
 
         public async Task SaveProdutos(List<Livro> livros)
